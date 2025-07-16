@@ -9,8 +9,7 @@ num_ids = 14548
 
 fieldnames = ["SBD", "Toán", "Ngữ văn", "Ngoại ngữ", "Lịch sử", "Địa lý", "Sinh học", "Vật lý", "Hóa học", "Tin học", "Công nghệ Công nghiệp", "Công nghệ Nông nghiệp", "Giáo dục kinh tế và pháp luật", "Giáo dục công dân"]
 
-csvfile = open('results.csv', 'a', newline='')
-csvfile.truncate(0)
+csvfile = open('results.csv', 'w+', newline='')
 writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 writer.writeheader()
 
@@ -42,11 +41,6 @@ def search(start, end):
 
             print(scores)
             writer.writerow(scores)
-
-            # if scores["Toán"] == 8.5 and scores["Ngữ văn"] == 8 and scores["Lịch sử"] == 9 and scores["Ngoại ngữ"] < 6:
-            #     print(sbd, scores)
-            # else:
-            #     print(sbd, ": Nope")
 
 def main():
     search(1, num_ids + 1)
