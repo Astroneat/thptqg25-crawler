@@ -21,7 +21,7 @@ def search(start, end):
     session.mount('https://', adapter)
 
     for i in range(start, end):
-        sbd = '\'' + region + '0' * (6 - len(str(i))) + str(i)
+        sbd = region + '0' * (6 - len(str(i))) + str(i)
         url = f'https://diemthi.vnexpress.net/index/detail/sbd/{sbd}/year/2025'
         response = session.get(url)
 
